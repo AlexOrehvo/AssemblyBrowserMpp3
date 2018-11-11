@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyBrowser", "AssemblyBrowser.csproj", "{F60A878E-D240-4477-918E-43CDD46136AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrowserView", "BrowserView.csproj", "{F60A878E-D240-4477-918E-43CDD46136AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyAnalyzer", "..\AssemblyAnalyzer\AssemblyAnalyzer.csproj", "{EC4C7BC5-98F3-4F55-9026-91E636231F0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{BE2C77B5-1526-4B6A-AA9E-1A0091EDDCD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{F60A878E-D240-4477-918E-43CDD46136AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F60A878E-D240-4477-918E-43CDD46136AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F60A878E-D240-4477-918E-43CDD46136AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC4C7BC5-98F3-4F55-9026-91E636231F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC4C7BC5-98F3-4F55-9026-91E636231F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC4C7BC5-98F3-4F55-9026-91E636231F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC4C7BC5-98F3-4F55-9026-91E636231F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE2C77B5-1526-4B6A-AA9E-1A0091EDDCD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE2C77B5-1526-4B6A-AA9E-1A0091EDDCD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE2C77B5-1526-4B6A-AA9E-1A0091EDDCD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE2C77B5-1526-4B6A-AA9E-1A0091EDDCD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

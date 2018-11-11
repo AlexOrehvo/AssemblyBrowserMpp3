@@ -1,0 +1,6 @@
+E:\5сем\MPP\mpp3\AssemblyAnalyzer\bin\Debug\AssemblyAnalyzer.dll
+E:\5сем\MPP\mpp3\AssemblyAnalyzer\bin\Debug\AssemblyAnalyzer.pdb
+E:\5сем\MPP\mpp3\AssemblyAnalyzer\obj\Debug\AssemblyAnalyzer.csprojAssemblyReference.cache
+E:\5сем\MPP\mpp3\AssemblyAnalyzer\obj\Debug\AssemblyAnalyzer.csproj.CoreCompileInputs.cache
+E:\5сем\MPP\mpp3\AssemblyAnalyzer\obj\Debug\AssemblyAnalyzer.dll
+E:\5сем\MPP\mpp3\AssemblyAnalyzer\obj\Debug\AssemblyAnalyzer.pdb

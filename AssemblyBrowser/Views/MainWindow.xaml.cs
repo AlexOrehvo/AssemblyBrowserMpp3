@@ -24,5 +24,16 @@ namespace AssemblyBrowser
 		{
 			InitializeComponent();
 		}
+
+		private void button_Click(object sender, RoutedEventArgs e)
+		{
+			if (textBox.Text == "")
+			{
+				label.Content = "Введите имя!";
+			} else
+			{
+				label.Content = "Привет, " + textBox.Text + "!";
+			}
+		}
 	}
 }
