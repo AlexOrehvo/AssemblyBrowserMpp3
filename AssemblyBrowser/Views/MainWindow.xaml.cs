@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AssemblyBrowser.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,17 +24,12 @@ namespace AssemblyBrowser
 		public MainWindow()
 		{
 			InitializeComponent();
+			DataContext = new MainViewModel();
 		}
 
 		private void button_Click(object sender, RoutedEventArgs e)
 		{
-			if (textBox.Text == "")
-			{
-				label.Content = "Введите имя!";
-			} else
-			{
-				label.Content = "Привет, " + textBox.Text + "!";
-			}
+
 		}
 	}
 }

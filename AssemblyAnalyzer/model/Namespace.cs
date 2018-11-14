@@ -24,15 +24,32 @@ namespace AssemblyAnalyzer.Model
 			set { entities = value; }
 		}
 
+		private List<string> entityNames;
+
+		public List<string> EntityNames
+		{
+			get { return entityNames; }
+		}
+
 		public Namespace(string name)
 		{
 			this.name = name;
 			entities = new List<Entity>();
+			entityNames = new List<string>();
 		}
 
 		public void AddEntity(Type type)
 		{
-			entities.Add(new Entity(type));
+			Entity entity = new Entity(type);
+			entities.Add(entity);
+			entityNames.Add(entity.GetName());
 		}
+
+		public Entity GetEntity(string name)
+		{
+			Entity entity = entities.Find(e => e.Name.Equals(name));
+			return entity;
+		}
+			
 	}
 }

@@ -10,6 +10,12 @@ namespace AssemblyAnalyzer.Model
 	public class Entity
 	{
 		private string name;
+
+		public string Name
+		{
+			get { return name; }
+		}
+	
 		private Type type;
 
 		public List<Field> Fields
@@ -25,12 +31,30 @@ namespace AssemblyAnalyzer.Model
 			get;
 		}
 
+		public List<string> FieldsNames
+		{
+			get;
+		}
+		public List<string> PropertiesNames
+		{
+			get;
+		}
+		public List<string> MethodsNames
+		{
+			get;
+		}
+
 		public Entity(Type type)
 		{
 			this.type = type;
 			this.Fields = new List<Field>();
 			this.Properties = new List<Property>();
 			this.Methods = new List<Method>();
+
+			this.FieldsNames = new List<string>();
+			this.PropertiesNames = new List<string>();
+			this.MethodsNames = new List<string>();
+
 			SetFields();
 			SetProperties();
 			SetMethods();
@@ -63,7 +87,9 @@ namespace AssemblyAnalyzer.Model
 			foreach (var fieldInfo in type.GetFields(BindingFlags.Instance | 
 				BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
 			{
-				Fields.Add(new Field(fieldInfo));
+				Field field = new Field(fieldInfo);
+				Fields.Add(field);
+				FieldsNames.Add(field.GetName());
 			}
 		}
 
@@ -72,7 +98,9 @@ namespace AssemblyAnalyzer.Model
 			foreach (var propertyInfo in type.GetProperties(BindingFlags.Instance |
 				BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
 			{
-				Properties.Add(new Property(propertyInfo));
+				Property property = new Property(propertyInfo);
+				Properties.Add(property);
+				PropertiesNames.Add(property.GetName());
 			}
 		}
 
@@ -80,7 +108,9 @@ namespace AssemblyAnalyzer.Model
 		{
 			foreach (var methodInfo in type.GetMethods())
 			{
-				Methods.Add(new Method(methodInfo));
+				Method method = new Method(methodInfo);
+				Methods.Add(method);
+				MethodsNames.Add(method.GetName());
 			}
 		}
 	}

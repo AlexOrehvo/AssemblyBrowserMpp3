@@ -12,14 +12,26 @@ namespace AssemblyAnalyzer
     {
 		private Assembly assembly;
 		private List<Namespace> namespaces;
+		private List<string> namespaceNames;
 
-		public AsmAnalyzer(Assembly assembly)
+		public string Name
 		{
-			this.assembly = assembly;
-			this.namespaces = new List<Namespace>();
+			get { return assembly.FullName; }
 		}
 
-		public List<Namespace> GetNamespaces() {
+		public List<string> NamespaceNames
+		{
+			get;
+		}
+
+		public AsmAnalyzer()
+		{
+			this.assembly = null;
+			this.namespaces = new List<Namespace>();
+			this.namespaceNames = new List<string>();
+		}
+
+		public List<string> GetNamespaces() {
 			List<Type> typeList = new List<Type>(GetLoadableTypes());
 
 			foreach(Type type in typeList) {
@@ -36,9 +48,20 @@ namespace AssemblyAnalyzer
 				if (!isNamespaceExist)
 				{
 					namespaces.Add(new Namespace(type.Namespace));
+					namespaceNames.Add(type.Namespace);
 				}
 			}
-			return namespaces;
+			return namespaceNames;
+		}
+
+		public void SetAssembly(Assembly assembly)
+		{
+			this.assembly = assembly;
+		}
+
+		public Namespace GetNamespace(string namespaceName)
+		{
+			return namespaces.Find(ns => ns.Name.Equals(namespaceName));
 		}
 
 		private IEnumerable<Type> GetLoadableTypes()
